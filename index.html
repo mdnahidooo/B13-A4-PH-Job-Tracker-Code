@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker</title>
+
+
+    <!-- tailwind+daisyUi -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-base-200">
+    <header class="w-[80%] mx-auto">
+        <h2 class="text-2xl font-bold py-6">Job Application Tracker</h2>
+
+        <div class="grid grid-cols-3 gap-8">
+            <div class="bg-white p-4 rounded-md ">
+                <p>Total</p>
+                <p class="text-2xl text-black">0</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-md ">
+                <p>Interview</p>
+                <p class="text-2xl text-green-500">0</p>
+            </div>
+
+            <div class="bg-white p-4 rounded-md ">
+                <p>Rejected</p>
+                <p class="text-2xl text-red-500">0</p>
+            </div>
+        </div>
+
+        <hr class="my-6 text-[#E6E7E9]">
+    </header>
+
+    <main class="w-[80%] mx-auto">
+
+        <div class="flex justify-between">
+            <h2 class="text-xl font-bold">Available Jobs</h2>
+            <h4 class="text-[#64748B]">0 jobs</h4>
+        </div>
+
+    </main>
+</body>
+
+</html>
