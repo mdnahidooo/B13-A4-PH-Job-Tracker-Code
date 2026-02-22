@@ -208,7 +208,7 @@ function renderInterview() {
                     <div class="flex justify-between">
                         <div>
                             <p class="job-title font-bold text-xl">${interview.jobTitle}</p>
-                            <p class="experties text-gray-500">React Native Developer</p>
+                            <p class="experties text-gray-500">${interview.experties}</p>
                         </div>
 
                         <div>
@@ -219,13 +219,12 @@ function renderInterview() {
                         </div>
                     </div>
                     <div>
-                        <p class="salary text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
+                        <p class="salary text-gray-500">${interview.salary}</p>
                     </div>
 
                     <div>
                         <button class="status-btn bg-green-100 rounded-md px-5 py-2 mb-2 text-green-500 border border-green-500">${interview.statusBtn}</button>
-                        <p class="descriptionns">Build cross-platform mobile applications using React Native. Work on products used by
-                            millions of users worldwide.</p>
+                        <p class="descriptionns">${interview.descriptionns}</p>
                     </div>
 
                     <div>
@@ -251,7 +250,7 @@ function renderRejected() {
                     <div class="flex justify-between">
                         <div>
                             <p class="job-title font-bold text-xl">${rejected.jobTitle}</p>
-                            <p class="experties text-gray-500">React Native Developer</p>
+                            <p class="experties text-gray-500">${rejected.experties}</p>
                         </div>
 
                         <div>
@@ -262,13 +261,12 @@ function renderRejected() {
                         </div>
                     </div>
                     <div>
-                        <p class="salary text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
+                        <p class="salary text-gray-500">${rejected.salary}</p>
                     </div>
 
                     <div>
                         <button class="status-btn bg-red-100 rounded-md px-5 py-2 mb-2 text-red-500 border border-red-500">${rejected.statusBtn}</button>
-                        <p class="descriptionns">Build cross-platform mobile applications using React Native. Work on products used by
-                            millions of users worldwide.</p>
+                        <p class="descriptionns">${rejected.descriptionns}</p>
                     </div>
 
                     <div>
