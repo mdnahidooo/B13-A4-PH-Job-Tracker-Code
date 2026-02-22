@@ -8,6 +8,7 @@ const interviewCount = document.getElementById("interviewCount");
 const rejectedCount = document.getElementById("rejectedCount");
 
 const jobsCount = document.getElementById("jobsCount");
+const deleteBtn = document.querySelectorAll(".delete-btn");
 
 const allTabBtn = document.getElementById("all-tab-btn");
 const interviewTabBtn = document.getElementById("interview-tab-btn");
@@ -77,9 +78,12 @@ function showOnly(id) {
         allCardSections.classList.remove('hidden');
         interviewFilterSection.classList.add('hidden');
         rejectedFilterSections.classList.add('hidden');
-        noCardSections.classList.add('hidden');
 
-        jobsCount.innerText = `8 jobs`;
+        jobsCount.innerText = `${totalCount.innerText = allCardSections.children.length} jobs`;
+
+        if (allCardSections.children.length == 0) {
+            noCardSections.classList.remove('hidden');
+        }
 
     } else if (id == 'rejected-tab-btn') {
         if (rejectedList.length === 0) {
@@ -189,7 +193,6 @@ mainContainer.addEventListener('click', function (event) {
 })
 
 
-
 function renderInterview() {
     // make the filterSection empty every time
     interviewFilterSection.innerHTML = ''
@@ -278,3 +281,18 @@ function renderRejected() {
     }
 }
 
+
+// for delete card
+document.addEventListener("click", function (event) {
+    // console.log(event.target.classList.contains('delete-btn'))
+    if (event.target.classList.contains('delete-btn')) {
+        const deleteCard = event.target.parentNode.parentNode.parentNode.parentNode;
+        // console.log(deleteCard);
+        deleteCard.remove()
+        jobsCount.innerText = `${totalCount.innerText = allCardSections.children.length} jobs`;;
+
+        if (allCardSections.children.length == 0) {
+            noCardSections.classList.remove('hidden');
+        }
+    }
+});
