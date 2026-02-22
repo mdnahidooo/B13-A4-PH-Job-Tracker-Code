@@ -78,7 +78,7 @@ function showOnly(id) {
         allCardSections.classList.remove('hidden');
         interviewFilterSection.classList.add('hidden');
         rejectedFilterSections.classList.add('hidden');
-
+        noCardSections.classList.add('hidden');
         jobsCount.innerText = `${totalCount.innerText = allCardSections.children.length} jobs`;
 
         if (allCardSections.children.length == 0) {
@@ -104,6 +104,7 @@ function showOnly(id) {
         }
     }
 }
+
 
 mainContainer.addEventListener('click', function (event) {
     if (event.target.classList.contains('interview-btn')) {
@@ -286,6 +287,7 @@ document.addEventListener("click", function (event) {
     if (event.target.classList.contains('delete-btn')) {
         const deleteCard = event.target.parentNode.parentNode.parentNode.parentNode;
         // console.log(deleteCard);
+        alert("Are you want to delete this card?")
         deleteCard.remove()
         jobsCount.innerText = `${totalCount.innerText = allCardSections.children.length} jobs`;;
 
