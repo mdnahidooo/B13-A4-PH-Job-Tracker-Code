@@ -308,7 +308,9 @@ document.addEventListener("click", function (event) {
         const deleteCard = event.target.closest('.card');
 
         if (deleteCard) {
-            // Alert na diye direct delete koro (faster)
+            // Alert dew
+            alert("Are you want to delete this card?");
+            // direct delete koro (faster)
             deleteCard.remove();
 
             // Count update koro
