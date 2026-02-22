@@ -134,9 +134,15 @@ mainContainer.addEventListener('click', function (event) {
         // after remove rerender the html
         if (currentStatus == 'rejected-tab-btn') {
             renderRejected()
+            jobsCount.innerText = `${rejectedList.length} of 8 jobs`;
+
+            if (rejectedList.length == 0) {
+                noCardSections.classList.remove('hidden');
+            }
         }
 
         calculateCount()
+
     }
     else if (event.target.classList.contains('rejected-btn')) {
         const parenNode = event.target.parentNode.parentNode.parentNode;
@@ -171,6 +177,11 @@ mainContainer.addEventListener('click', function (event) {
         // after remove rerender the html
         if (currentStatus == 'interview-tab-btn') {
             renderInterview()
+            jobsCount.innerText = `${interviewList.length} of 8 jobs`;
+
+            if (interviewList.length == 0) {
+                noCardSections.classList.remove('hidden');
+            }
         }
 
         calculateCount()
@@ -266,3 +277,4 @@ function renderRejected() {
         rejectedFilterSections.appendChild(div)
     }
 }
+
