@@ -281,18 +281,45 @@ function renderRejected() {
 }
 
 
-// for delete card
-document.addEventListener("click", function (event) {
-    // console.log(event.target.classList.contains('delete-btn'))
-    if (event.target.classList.contains('delete-btn')) {
-        const deleteCard = event.target.parentNode.parentNode.parentNode.parentNode;
-        // console.log(deleteCard);
-        alert("Are you want to delete this card?")
-        deleteCard.remove()
-        jobsCount.innerText = `${totalCount.innerText = allCardSections.children.length} jobs`;;
+// // for delete card
+// document.addEventListener("click", function (event) {
+//     // console.log(event.target.classList.contains('delete-btn'))
+//     if (event.target.classList.contains('delete-btn')) {
+//         const deleteCard = event.target.parentNode.parentNode.parentNode.parentNode;
+//         // console.log(deleteCard);
+//         alert("Are you want to delete this card?")
+//         deleteCard.remove()
+//         jobsCount.innerText = `${totalCount.innerText = allCardSections.children.length} jobs`;;
 
-        if (allCardSections.children.length == 0) {
-            noCardSections.classList.remove('hidden');
+//         if (allCardSections.children.length == 0) {
+//             noCardSections.classList.remove('hidden');
+//         }
+//     }
+// });
+
+
+
+// for delete card - FAST VERSION
+document.addEventListener("click", function (event) {
+    // Delete button or tar moddher image e click korle
+    if (event.target.closest('.delete-btn')) {
+
+        // Direct card khuje ber koro - fastest way
+        const deleteCard = event.target.closest('.card');
+
+        if (deleteCard) {
+            // Alert na diye direct delete koro (faster)
+            deleteCard.remove();
+
+            // Count update koro
+            const remainingCards = allCardSections.children.length;
+            totalCount.innerText = remainingCards;
+            jobsCount.innerText = remainingCards + ' jobs';
+
+            // Kono card na thakle message dekhao
+            if (remainingCards === 0) {
+                noCardSections.classList.remove('hidden');
+            }
         }
     }
 });
