@@ -118,6 +118,7 @@ mainContainer.addEventListener('click', function (event) {
         const descriptionns = parenNode.querySelector('.descriptionns').innerText;
         // console.log(jobTitle, experties, salary, status, descriptionns)
 
+
         parenNode.querySelector('.status-btn').innerText = 'Interview';
 
         const cardInfo = {
@@ -299,9 +300,9 @@ function renderRejected() {
 
 
 
-// for delete card - FAST VERSION
+// for delete card - FAST VERSION-- parentNode slow kaj korchilo 
 document.addEventListener("click", function (event) {
-    // Delete button or tar moddher image e click korle
+    // Delete button or tar moddher btn e click korle
     if (event.target.closest('.delete-btn')) {
 
         // Direct card khuje ber koro - fastest way
@@ -310,7 +311,7 @@ document.addEventListener("click", function (event) {
         if (deleteCard) {
             // Alert dew
             alert("Are you want to delete this card?");
-            // direct delete koro (faster)
+            // direct delete koro 
             deleteCard.remove();
 
             // Count update koro
@@ -318,10 +319,51 @@ document.addEventListener("click", function (event) {
             totalCount.innerText = remainingCards;
             jobsCount.innerText = remainingCards + ' jobs';
 
-            // Kono card na thakle message dekhao
+            // Kono card na thakle no card section show koro
             if (remainingCards === 0) {
                 noCardSections.classList.remove('hidden');
             }
         }
+    }
+});
+
+
+// after going support session i am trying again. and now working.
+// Main event listener
+mainContainer.addEventListener('click', function (event) {
+    const target = event.target;
+
+    // Handle Interview button
+    if (target.classList.contains('interview-btn')) {
+        const card = target.closest('.card');
+
+
+        // change the style button
+        const statusBtn = card.querySelector('.status-btn');
+        statusBtn.classList.remove('bg-base-300');
+        statusBtn.classList.add('bg-green-100', 'text-green-500', 'border', 'border-green-500');
+
+
+        // change the card border style
+        card.classList.remove('border-l-2', 'border-green-500', 'border-red-500');
+        card.classList.add('border-l-2', 'border-green-500');
+
+    }
+
+    // Handle Rejected button
+    else if (target.classList.contains('rejected-btn')) {
+        const card = target.closest('.card');
+
+
+
+        // change the style button
+        const statusBtn = card.querySelector('.status-btn');
+        statusBtn.classList.remove('bg-base-300');
+        statusBtn.classList.add('bg-red-100', 'text-red-500', 'border', 'border-red-500');
+        statusBtn.innerText = 'Rejected';
+        
+        // change the card border style
+        card.classList.remove('border-l-2', 'border-green-500', 'border-red-500');
+        card.classList.add('border-l-2', 'border-red-500');
     }
 });
