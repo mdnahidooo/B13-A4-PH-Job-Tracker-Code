@@ -64,7 +64,7 @@ function showOnly(id) {
             interviewFilterSection.classList.add('hidden');
             rejectedFilterSections.classList.add('hidden');
 
-            jobsCount.innerText = `${interviewList.length} of 8 jobs`;
+            jobsCount.innerText = `${interviewList.length} of ${allCardSections.children.length} jobs`;
         } else {
             allCardSections.classList.add('hidden');
             interviewFilterSection.classList.remove('hidden')
@@ -72,7 +72,7 @@ function showOnly(id) {
             noCardSections.classList.add('hidden');
             renderInterview()
 
-            jobsCount.innerText = `${interviewList.length} of 8 jobs`;
+            jobsCount.innerText = `${interviewList.length} of ${allCardSections.children.length} jobs`;
         }
     } else if (id == 'all-tab-btn') {
         allCardSections.classList.remove('hidden');
@@ -92,7 +92,7 @@ function showOnly(id) {
             interviewFilterSection.classList.add('hidden');
             rejectedFilterSections.classList.add('hidden');
 
-            jobsCount.innerText = `${rejectedList.length} of 8 jobs`;
+            jobsCount.innerText = `${rejectedList.length} of ${allCardSections.children.length} jobs`;
         } else {
             allCardSections.classList.add('hidden');
             rejectedFilterSections.classList.remove('hidden')
@@ -100,7 +100,7 @@ function showOnly(id) {
             interviewFilterSection.classList.add('hidden');
             renderRejected()
 
-            jobsCount.innerText = `${rejectedList.length} of 8 jobs`;
+            jobsCount.innerText = `${rejectedList.length} of ${allCardSections.children.length} jobs`;
         }
     }
 }
@@ -140,7 +140,7 @@ mainContainer.addEventListener('click', function (event) {
         // after remove rerender the html
         if (currentStatus == 'rejected-tab-btn') {
             renderRejected()
-            jobsCount.innerText = `${rejectedList.length} of 8 jobs`;
+            jobsCount.innerText = `${rejectedList.length} of ${allCardSections.children.length} jobs`;
 
             if (rejectedList.length == 0) {
                 noCardSections.classList.remove('hidden');
@@ -183,7 +183,7 @@ mainContainer.addEventListener('click', function (event) {
         // after remove rerender the html
         if (currentStatus == 'interview-tab-btn') {
             renderInterview()
-            jobsCount.innerText = `${interviewList.length} of 8 jobs`;
+            jobsCount.innerText = `${interviewList.length} of ${allCardSections.children.length} jobs`;
 
             if (interviewList.length == 0) {
                 noCardSections.classList.remove('hidden');
@@ -361,7 +361,7 @@ mainContainer.addEventListener('click', function (event) {
         statusBtn.classList.remove('bg-base-300');
         statusBtn.classList.add('bg-red-100', 'text-red-500', 'border', 'border-red-500');
         statusBtn.innerText = 'Rejected';
-        
+
         // change the card border style
         card.classList.remove('border-l-2', 'border-green-500', 'border-red-500');
         card.classList.add('border-l-2', 'border-red-500');
